@@ -4,31 +4,28 @@ var typed = new Typed("#element", {
   typeSpeed: 100,
   loop: true,
   loopCount: Infinity,
+  backSpeed: 100,
 });
 
-// contact form
-var btn = document.getElementById("sendEmailBtn");
-btn.addEventListener("click", function (e) {
-  e.preventDefault();
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var subject = document.getElementById("subject").value;
-  var msg = document.getElementById("message").value;
-  var body =
-    "name :" +
-    name +
-    "<br/> email :" +
-    email +
-    "<br/> subject :" +
-    subject +
-    "<br/> message :" +
-    msg;
+///mailsend
+function sendMail() {
+  var params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
 
-  Email.send({
-    SecureToken: "e5043d09-100c-4083-808d-70e85153a0e2",
-    To: "sandiip2021@gmail.com",
-    From: email,
-    Subject: subject,
-    Body: body,
-  }).then((message) => alert(message));
-});
+  const serviceID = "service_7p0jycv";
+  const templateID = "template_bxvlniv";
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      (document.getElementById("name").value = ""),
+        (document.getElementById("email").value = ""),
+        (document.getElementById("message").value = "");
+      console.log(res);
+      alert("your message sent successfully");
+    })
+    .catch(() => console.log(err));
+}

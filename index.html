@@ -11,6 +11,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("OVSg32kXvcT36KPti");
+      })();
+    </script>
   </head>
   <body>
     <div class="container">
@@ -47,7 +57,13 @@
 
               <div id="Home-btns">
                 <button class="btn">
-                  <a href="resume/sandeep.pdf"> Hire Me </a>
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/in/sandeep-ahirwar-062592243"
+                  >
+                    Hire Me
+                  </a>
+
                   <img
                     src="images/mess.png"
                     alt="hire"
@@ -58,8 +74,7 @@
                   />
                 </button>
                 <button class="btn">
-                  <a
-                    href="https://www.linkedin.com/in/sandeep-ahirwar-062592243"
+                  <a target="_blank " href="resume/sandeep_Ahirwar_resume.pdf"
                     >Download
                   </a>
                   <img
@@ -94,7 +109,7 @@
                     <img src="images/js.png" alt="js" />
                   </div>
                   <h1 id="headings">Quiz-application</h1>
-                  <p>A Quiz Web Quiz-application which manage quizes.</p>
+                  <em>A Quiz Web Quiz-application which manage quizes.</em>
 
                   <div class="project-content">
                     <a href="https://github.com/sandiip07/Quick-Quiz.git"
@@ -123,10 +138,10 @@
                     <img src="images/css.png" alt="" />
                   </div>
                   <h1 id="headings">Codepen Clone</h1>
-                  <p>
+                  <em>
                     A codepen clone that showcase users created HTML, CSS, JS
                     code sneppits.
-                  </p>
+                  </em>
 
                   <div class="project-content">
                     <a href="https://github.com/sandiip07/codepen-clone-.git"
@@ -151,7 +166,7 @@
                     <img src="images/css.png" alt="" />
                   </div>
                   <h1 id="headings">TO-DO List</h1>
-                  <p>A simple Task Traker website.</p>
+                  <em>A simple Task Traker website.</em>
 
                   <div class="project-content">
                     <a href="https://github.com/sandiip07/RN-TODOLIST.git"
@@ -180,9 +195,9 @@
                     <img src="images/css.png" alt="" />
                   </div>
                   <h1 id="headings">Responsive Loader</h1>
-                  <p>
+                  <em>
                     A simple responsive, colorfull, and infinate rounded loader
-                  </p>
+                  </em>
 
                   <div class="project-content">
                     <a href="https://github.com/sandiip07/loader.git"
@@ -206,9 +221,9 @@
               <h1 id="skill-heading">This is Me and My TechStack</h1>
               <p>
                 Hii Everyonr!! My Name is Sandeep Ahirwar. I am pursuing my
-                Bachelor of Technoly Science moving forward towards final Year.
-                currently i am learing MERN STACK. And have all of these
-                knowledge.
+                Bachelor of Technology And moving forward towards final Year.
+                currently, I am learing MERN STACK And i have the knowledge of all these.
+                
               </p>
             </div>
 
@@ -236,19 +251,11 @@
           </h1>
 
           <div class="Contact-inputs">
-            <form
-              class="Contact-inputs"
-              onclick="send(); reset(); return false"
-            >
+            <form class="Contact-inputs">
               <input type="text" placeholder="Enter your name" id="name" />
               <input type="text" placeholder="Enter your Email" id="email" />
-              <input
-                type="textarea"
-                placeholder="Enter your Subject"
-                id="subject"
-              />
 
-              <label for="w3review" style="color: #343d68aa"
+              <label for="message" style="color: #343d68aa; font-size: 0.8rem"
                 >GET IN TOUCH</label
               >
               <textarea
@@ -258,7 +265,11 @@
                 placeholder="Write your message here"
               ></textarea>
 
-              <button class="contact-btn" id="sendEmailBtn">
+              <button
+                class="contact-btn"
+                id="sendEmailBtn"
+                onclick="sendMail()"
+              >
                 Send Email
                 <img
                   src="images/sent.png"
@@ -292,7 +303,6 @@
     </div>
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
